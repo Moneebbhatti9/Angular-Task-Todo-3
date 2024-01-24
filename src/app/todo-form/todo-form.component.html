@@ -1,0 +1,21 @@
+<div class="main">
+  <div class="main-container">
+    <header>
+      <h1 style="text-align: center">TODO-LIST</h1>
+    </header>
+    <div class="field">
+      <input
+        [(ngModel)]="newTodoTitle"
+        type="text"
+        id="Title"
+        placeholder="Title"
+        (keyup.enter)="addTodo()"
+      />
+      <div class="line"></div>
+    </div>
+
+    <div class="todo-item">
+      <app-todo-list-item></app-todo-list-item>
+    </div>
+  </div>
+</div>

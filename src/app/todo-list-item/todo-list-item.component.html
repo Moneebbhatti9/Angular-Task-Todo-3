@@ -1,0 +1,37 @@
+<div class="todoItem">
+  <ul>
+    <li *ngFor="let todo of todos; let i = index">
+      <div class="item-row">
+        <div class="item-details" [class.completed]="todo.completed">
+          <input
+            [(ngModel)]="todo.completed"
+            (change)="toggleCompleted()"
+            class="form-check-input customCheckBox"
+            type="checkbox"
+            id="check"
+          />
+          <h4
+            [style.textDecoration]="
+              todoService.isTodoCompleted(todo) ? 'line-through' : 'none'
+            "
+          >
+            {{ todo.task }}
+          </h4>
+        </div>
+
+        <div class="button-wrapper">
+          <button type="button" class="DeleteButton" (click)="deleteTodo(i)">
+            <i class="bi bi-trash"></i>
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="button-wrapper-1">
+    <button (click)="removeCompleted()">Remove Completed</button>
+    <button (click)="removeAllTodos()">
+      Remove All <i class="bi bi-trash"></i>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,140 @@
+.todoItem {
+  margin: 10px 30px;
+  width: 500px;
+}
+
+
+ul {
+  height: 300px;
+  padding: 0;
+  overflow-y: scroll;
+}
+
+ul::-webkit-scrollbar {
+  width: 3px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background-color: #27a69b;
+  border-radius: 4px;
+}
+
+ul::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+li {
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 5px;
+  list-style: none;
+  margin: 30px;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .item-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+
+    h4 {
+      margin: 0 !important;
+    }
+  }
+}
+
+/* .customCheckBox {
+  width: 30px !important;
+  height: 30px !important;
+} */
+
+
+.customCheckBox {
+  /* Hide the default checkbox appearance */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Set a custom checkbox size */
+  width: 30px;
+  height: 30px;
+
+  /* Add a border for the checkbox */
+  border: 2px solid #27a69b;
+  border-radius: 5px;
+
+  /* Style the checkbox label */
+  position: relative;
+
+  /* Style for the tick mark */
+  &::before {
+    content: '\2713';
+    /* Unicode character for a checkmark */
+    font-size: 20px;
+    color: #27a69b;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    /* Initially hidden */
+  }
+}
+
+/* Style for the checked state */
+.customCheckBox.checked {
+  background-color: #27a69b;
+  /* Change background color when checked */
+  border-color: #27a69b;
+  /* Change border color when checked */
+
+  /* Show the tick mark when checked */
+  &::before {
+    opacity: 1;
+  }
+}
+
+
+.button-wrapper {
+  display: flex;
+  gap: 15px;
+  margin-right: 10px;
+
+  .DeleteButton {
+    border-radius: 50%;
+    background-color: #8ed3d0;
+    border: none;
+    width: 43px;
+    height: 43px;
+    box-shadow: 2px 2px 2px rgba(110, 110, 110, 0.3);
+  }
+
+  i {
+    color: #fff;
+    font-size: 24px;
+  }
+}
+
+.button-wrapper-1 {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    background-color: #27a69b;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 2px 2px 2px rgba(110, 110, 110, 0.5);
+  }
+}
+
+.completed {
+  text-decoration: line-through;
+}
